@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="hammer.js" charset="utf-8"></script>
+    <style media="screen">
+    .box {width:200px; height:200px; background:#CCC;}
+    </style>
+    <script>
+        function $(...args){
+          return document.querySelectorAll(...args);
+        }
+
+        window.onload=function(){
+          let aBox=$('.box');
+
+          let hammer=new Hammer(aBox);
+
+          let obj=hamer.get('pinch');
+          obj.set({enable:true});
+
+          hammer.on('pinchstart',ev=>{});
+          hammer.on('pinchmove',ev=>{
+            aBox.style.transform=`scale(${ev.scale})`
+          });
+          hammer.on('pinchend',ev=>{})
+        }
+    </script>
+</head>
+<body>
+  adfasdfasdf
+  <div class="box"></div>
+  asdfasdfasdf
+</body>
+</html>
